@@ -4,8 +4,7 @@
 \usepackage{usecases}
 \usepackage{enumitem}
 
-\title{CS383:  Software Engineering}
-\subtitle{HW2:  Use Cases\\Fall 2013}
+\title{Use Cases Template}
 
 \author{CS383 Python Team}
 \date{}
@@ -13,76 +12,79 @@
 \begin{document}
 \maketitle
 \chapter{Use cases}
-This isn't necessarily what it will look like in the end, but this is just a basic template that I have thrown together so that everyone can see just what the use case format looks like.  There are some parts that aren't really the \LaTeX way (e.g. enumerating the use cases ourselves and specifying the numbers in alternate scenarios) but it will suffice, I believe.
-\section{One use case here}
-\begin{usecase}
-\addtitle{Use Case I}{Title goes here}
-\addfield{Precondition}{Precondition goes here}
-\addfield{Actor}{Rebel Player}
-\addscenario{Success Scenario}{
-	\item Does something first
-	\item Then does this.
-	\item This happens after that!
-	\item Finally it ends.
-}
-\addscenario{Alternate Scenario 1}{
-	\item[2.a] Something alternate happened in step 2!
-		\begin{enumerate}[label=\arabic*.]
-		\item This happened first
-		\item New result here
-		\end{enumerate}
-	\item[5.a] Step 5 (which doesn't even exist!) had an issue:
-		\begin{enumerate}[label=\arabic*.]
-		\item Step 5 doesn't exist so start over.
-		\end{enumerate}
-}
-\end{usecase}
-\section{Two use cases here}
-\begin{usecase}
-\addtitle{Use Case II}{We unfortunately have to enumerate the use cases ourselves}
-\addfield{Precondition}{Precondition goes here}
-\addfield{Actor}{Rebel Player}
-\addscenario{Success Scenario}{
-	\item Does something first
-	\item Then does this.
-	\item This happens after that!
-	\item Finally it ends.
-}
-\addscenario{Alternate Scenario 1}{
-	\item[2.a] Something alternate happened in step 2!
-		\begin{enumerate}[label=\arabic*.]
-		\item This happened first
-		\item New result here
-		\end{enumerate}
-	\item[5.a] Step 5 (which doesn't even exist!) had an issue:
-		\begin{enumerate}[label=\arabic*.]
-		\item Step 5 doesn't exist so start over.
-		\end{enumerate}
-}
-\end{usecase}
+This isn't necessarily what it will look like in the end, but this is just a basic template that I have thrown together so that everyone can see just what the use case format looks like.  There are some parts that aren't really the \LaTeX\ way (e.g. enumerating the use cases ourselves and specifying the numbers in alternate scenarios) but it will suffice, I believe.
 
-\begin{usecase}
-\addtitle{Use Case III}{Title goes here}
-\addfield{Precondition}{Precondition goes here}
-\addfield{Actor}{Rebel Player}
-\addscenario{Success Scenario}{
-	\item Does something first
-	\item Then does this.
-	\item This happens after that!
-	\item Finally it ends.
-}
-\addscenario{Alternate Scenario 1}{
-	\item[2.a] Something alternate happened in step 2!
-		\begin{enumerate}[label=\arabic*.]
-		\item This happened first
-		\item New result here
-		\end{enumerate}
-	\item[5.a] Step 5 (which doesn't even exist!) had an issue:
-		\begin{enumerate}[label=\arabic*.]
-		\item Step 5 doesn't exist so start over.
-		\end{enumerate}
-}
-\end{usecase}
+Also, I recommend putting each use case in its own subsection and name the subsection after the use case.  The reason behind this is it will then show up in the table of contents when the table of contents is shown and because it makes identifying each individual use case easier.  See section 1.2 as an example.
+\section{One use case here}
+	\begin{usecase}
+	\addtitle{Use Case I}{Title goes here}
+	\addfield{Precondition}{Precondition goes here}
+	\addfield{Actor}{Rebel Player}
+	\addscenario{Success Scenario}{
+		\item Does something first
+		\item Then does this.
+		\item This happens after that!
+		\item Finally it ends.
+	}
+	\addscenario{Alternate Scenario 1}{
+		\item[2.a] Something alternate happened in step 2!
+			\begin{enumerate}[label=\arabic*.]
+			\item This happened first
+			\item New result here
+			\end{enumerate}
+		\item[5.a] Step 5 (which doesn't even exist!) had an issue:
+			\begin{enumerate}[label=\arabic*.]
+			\item Step 5 doesn't exist so start over.
+			\end{enumerate}
+	}
+	\end{usecase}
+\section{Two use cases here}
+\subsection{Use Case - Use Case II: We unfortunately have to enumerate the use cases ourselves}
+	\begin{usecase}
+	\addtitle{Use Case II}{We unfortunately have to enumerate the use cases ourselves}
+	\addfield{Precondition}{Precondition goes here}
+	\addfield{Actor}{Rebel Player}
+	\addscenario{Success Scenario}{
+		\item Does something first
+		\item Then does this.
+		\item This happens after that!
+		\item Finally it ends.
+	}
+	\addscenario{Alternate Scenario 1}{
+		\item[2.a] Something alternate happened in step 2!
+			\begin{enumerate}[label=\arabic*.]
+			\item This happened first
+			\item New result here
+			\end{enumerate}
+		\item[5.a] Step 5 (which doesn't even exist!) had an issue:
+			\begin{enumerate}[label=\arabic*.]
+			\item Step 5 doesn't exist so start over.
+			\end{enumerate}
+	}
+	\end{usecase}
+\subsection{Use Case - Use Case III: Title goes here}
+	\begin{usecase}
+	\addtitle{Use Case III}{Title goes here}
+	\addfield{Precondition}{Precondition goes here}
+	\addfield{Actor}{Rebel Player}
+	\addscenario{Success Scenario}{
+		\item Does something first
+		\item Then does this.
+		\item This happens after that!
+		\item Finally it ends.
+	}
+	\addscenario{Alternate Scenario 1}{
+		\item[2.a] Something alternate happened in step 2!
+			\begin{enumerate}[label=\arabic*.]
+			\item This happened first
+			\item New result here
+			\end{enumerate}
+		\item[5.a] Step 5 (which doesn't even exist!) had an issue:
+			\begin{enumerate}[label=\arabic*.]
+			\item Step 5 doesn't exist so start over.
+			\end{enumerate}
+	}
+	\end{usecase}
 
 
 
