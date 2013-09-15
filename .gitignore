@@ -4,6 +4,8 @@
 # We want the user to compile the tex file themselves, so don't
 # include the pdf
 *.pdf
+# Don't include the new stylesheet I'm working on
+newusecases.sty
 
 # Compiled source #
 ###################
