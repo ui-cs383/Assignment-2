@@ -1,0 +1,107 @@
+\documentclass[12pt,letterpaper]{scrreprt}
+
+%----------------------------------------------------------------------
+%				Required Packages
+%----------------------------------------------------------------------
+\usepackage{usecases}
+\usepackage{enumitem}
+%\usepackage{paralist}
+%\usepackage{tabto}
+\usepackage[top=2cm,bottom=3.5cm]{geometry}
+
+%----------------------------------------------------------------------
+%				Title Page
+%----------------------------------------------------------------------
+\title{CS383: Software Engineering}
+\subtitle{HW2: Use Cases\\Fall 2013}
+\author{CS383 Python Team} % Include everyone's name?
+\date{}
+
+%----------------------------------------------------------------------
+%				Additional Settings
+%----------------------------------------------------------------------
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
+
+
+
+
+%----------------------------------------------------------------------
+%				Use Case Document Start
+%----------------------------------------------------------------------
+\begin{document}
+
+% Initializations
+%\NumTabs{2} % This is for creating a two column use case scenario
+\maketitle
+%\tableofcontents % Eventually uncomment this
+
+\chapter{Use cases}
+	\section{Missions}
+		\subsection{Use Case - Missions I: Mission Phase}
+		% Missions Overview Use Case
+		\begin{usecase}
+		\addtitle{Missions I}{Mission Phase}
+		\addfield{Summary}{The phasing player goes on missions to try and gain resources of some sort to help him/her win the game.  Missions are chosen and completed on a per-Environ basis.}
+		\additemizedfield{Actors}{
+			\item Phasing Player
+		}
+		\additemizedfield{Preconditions}{
+			\item Search Phase has been completed.
+			\item Phasing player has characters that are eligible to complete missions.
+			}
+		\addscenario{Primary Scenario}{
+			\item Phasing Player chooses Environ.
+			\item System determines and displays eligible characters.
+			\item Phasing Player groups characters into Mission Groups.
+				\begin{enumerate}
+				\item If Phasing Player controls Rebel Camp in selected Environ, it is also an eligible Mission Group.
+				\end{enumerate}
+			\item System displays eligible Missions.
+			\item Phasing Player chooses Missions.
+			\item Phasing Player assigns Missions to Mission Groups.
+			\item Phasing Player attempts to complete Missions.
+			\item Phasing Player chooses next Environ to complete Missions in and repeats until no eligible Characters remain.
+		}
+		\addscenario{Alternative Scenario: No Missions}{
+			\item Phasing Player may choose not to complete any Missions.  In this case, the Mission Phase is complete.
+		}
+		\addscenario{Alternative Scenario: Cancel Missions}{
+			\item Phasing Player may choose to Abort a mission at any time.  Any incomplete Missions are then considered Aborted.
+		}
+		\additemizedfield{Related Use Cases}{
+			\item Missions II: Completing Missions in One Environ
+		}
+		\end{usecase}
+		
+		\subsection{Use Case - Missions II: Completing Missions in One Environ}
+		\begin{usecase}
+		\addtitle{Missions II}{Completing Missions in One Environ}
+		\addfield{Summary}{The Phasing Player attempts to complete Missions by completing the Events chosen by the System.
+		}
+		\additemizedfield{Actors}{
+			\item Phasing Player (regularly)
+			\item Non-Phasing Player (occasionally)
+		}
+		\additemizedfield{Preconditions}{
+			\item Mission Groups have been chosen, and Missions have been Assigned.
+		}
+		\addscenario{Primary Scenario}{
+			\item System determines number of ``Mission Attempts'' and determines Action Events for each Attempt.
+			\item Phasing Player completes Action Event.
+				\begin{enumerate}
+					\item Non-Phasing Player may be involved with an Action Event.
+				\end{enumerate}
+			\item Missions are completed based on results of Action Event.
+			\item Phasing Player continutes until:
+				\begin{enumerate}
+				\item All Missions are completed (successfully or unsuccessfully) or Aborted.
+				\item No Mission Attempts remain.
+				\end{enumerate}
+			\item System calculates results of Bonus Mission Attempts for incomplete missions.
+		}
+		\end{usecase}
+
+		
+		
+\end{document}
