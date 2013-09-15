@@ -37,6 +37,104 @@
 %\tableofcontents % Eventually uncomment this
 
 \chapter{Use cases}
+        \section{Pre-Game}
+                \subsection{Use Case - Pre-game I: Setting up the Player(s)}
+                \begin{usecase}
+                  \addtitle{Pre-game I}{Setting up the Player(s)}
+                  \addfield{Summary}{The players connect with each other.}
+                  \additemizedfield{Actors}{
+                    \item Human player(s)
+                  }
+                  \additemizedfield{Preconditions}{
+                    \item Game client(s) and server(s) have been started
+                  }
+                  \additemizedfield{Primary Scenario: Multi-player}{
+                    \item Players adjust settings and ensure general connectivity
+                    \item Players find each other either via server matching or other communication
+                    \item Players connect to each other for the game-start
+                    \item Players choose a side, one of:
+                      \begin{enumerate}
+                        \item Rebel Player
+                        \item Imperial Player
+                      \end{enumerate}
+                  }
+                  \additemizedfield{Alternative Scenario: Single-player}{
+                    \item Player adjusts settings
+                    \item Player chooses side, one of:
+                      \begin{enumerate}
+                        \item Rebel Player
+                        \item Imperial Player
+                      \end{enumerate}
+                    \item Player chooses AI difficulty level
+                  }
+                 \end{usecase}
+                \subsection{Use Case - Pre-game II: Choosing the Game}
+                \begin{usecase}
+                  \addtitle{Pre-game II}{Choosing the Game}
+                  \addfield{Summary}{The players choose a type of game
+                    before scenario selection.}
+                  \additemizedfield{Actors}{
+                        \item Rebel Player
+                        \item Imperial Player
+                  }
+                  \additemizedfield{Preconditions}{
+                        \item Player match-up has been completed
+                        \item Computer and Network players have been set-up
+                  }
+                  \additemizedfield{Primary Scenario: Multi-player}{
+                        \item The players vote to agreement on one of the following games:
+                              \begin{enumerate}
+                                    \item Star-system Game
+                                    \item Province Game
+                                    \item Galactic Game
+                              \end{enumerate}
+                  }
+                  \additemizedfield{Alternative Scenario: Single-player}{
+                        \item If single-player, the human player chooses one of:
+                              \begin{enumerate}
+                                    \item Star-system Game
+                                    \item Province Game
+                                    \item Galactic Game
+                              \end{enumerate}
+                  }
+                \end{usecase}
+                \subsection{Use Case - Pre-game III: Choosing the Scenario}
+                \begin{usecase}
+                  \addtitle{Pre-game III}{Choosing the Scenario}
+                  \addfield{Summary}{The players choose from among the
+                    available scenarios for their chosen game.}
+                  \additemizedfield{Actors}{
+                    \item Imperial Player
+                    \item Rebel Player
+                  }
+                  \additemizedfield{Preconditions}{
+                    \item Game type has been chosen
+                  }
+                  \additemizedfield{Primary Scenario: Star-System Game}{
+                    \item The system displays the Star-System game scenarios and their information
+                          \begin{enumerate}
+                                \item Flight to Egrix
+                                \item The Varu Powderkeg
+                          \end{enumerate}
+                    \item The players vote to agreement on which scenario to play
+                  }
+                  \additemizedfield{Alternative Scenario: Province Game}{
+                    \item The system displays the Province game scenarios and their information
+                        \begin{enumerate}
+                              \item The Empire's Backdoor
+                              \item Orlog Besieged
+                        \end{enumerate}
+                    \item The players vote to agreement on which scenario to play
+                  }
+                  \additemizedfield{Alternative Scenario: Galactic Game}{
+                    \item There is only one scenario for the Galactic Game, and that is the Campaign
+                    \item The players
+                  }
+                \end{usecase}
+        \section{Game opening}
+                \subsection{Use Case - Game opening: Set-up Chosen Scenario}
+                % I think this is where Game Opening comes into play, the scenario needs to be set-up which means
+                % that the player(s) need to place all their characters/units
 	\section{Missions}
 		\subsection{Use Case - Missions I: Mission Phase}
 		% Missions Overview Use Case
