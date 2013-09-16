@@ -1,0 +1,20 @@
+Use Case : Game Opening Setting up Chosen security.
+
+Actors:
+Both
+
+Precondition: Game is choosen:
+
+Summary: Game is setup according to scenario
+
+Related use cases: Purchasing and Placing Units
+
+Steps:
+System choose secrets (Only Galactic)
+	Imperial player knows secrets
+Rebel chooses Rebel Base (Only Galactic)
+System Places PDBs
+System Places Current Loyalty Marker
+	According to Scenario
+Both Players Purchase and Place units (see other case)
+	Purchase (Province and Galactic only)
