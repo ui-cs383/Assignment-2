@@ -199,7 +199,91 @@
 			\item System calculates results of Bonus Mission Attempts for incomplete missions.
 		}
 		\end{usecase}
-
+		\section{Character Combat}
+			% Section Author: Jeff Crocker
+		\subsection{Use Case - Character Combat I: Phasing vs Non-Phasing}
+		\begin{usecase}
+		\addtitle{Character Combat I}{Phasing vs Non-Phasing}
+		\addfield{Summary}{Non-Phasing Player's characters or military units have found Phasing Player characters and initiated combat, which shall be resolved immediately in a series of rounds of character combat procedure.}
+		\additemizedfield{Actors}{
+			\item Phasing Player
+			\item Non-Phasing Player
+		}
+		\additemizedfield{Preconditions}{
+			\item Non-Phasing Player's search has found enemy characters and has initiated combat.
+			}
+		\addscenario{Primary Scenario}{
+				\item Determine whether the character combat will be \textit{hand to hand} or a \textit{firefight}.
+				\begin{enumerate}
+				\item If a squad is the attacking force, the combat is a firefight
+				\item If characters are the attacking force, the Non-Phasing Player may dictate whether \textit{hand to hand} or a \textit{firefight}.
+				\end{enumerate}
+			\item Non-Phasing Player announces whether attempting to kill or capture.
+				\begin{enumerate}
+				\item If attempting to capture, shift two-columns to the left on the Character Combat Results Table for all resulting combat, including \textit{break off} attemps.
+				\end{enumerate}
+			\item Phasing Player assigns \textit{active} defenders from those available with at least one character required.
+			\item System determines \textit{combat differential} and informs both Phasing and Non-Phasing players.
+			\item Phasing Player may attempt to \textit{break off} from combat. 
+				\begin{enumerate}
+				\item Phasing Player attempts \textit{break off}
+					\begin{enumerate}
+					\item If \textit{break off} successful for only inactive defenders, those defenders are no longer found or involved in combat.
+					\item If \textit{break off} successful for active AND inactive defenders, both are no longer found and combat ends.
+					\item If \textit{break off} is unsuccessful defenders suffer a right column shift on the Character Combat Results Table for combat.
+					\end{enumerate}
+				\end{enumerate}
+			\item Unless all defending characters have succeeded in breaking off, System determines combat consequences, i.e. number of wounds and captured characters.
+			\item Both Phasing and Non-Phasing Player allocate respective wounds.
+			\item Repeat steps 3-7 indefinitely as long as both sides have live uncaptured characters and defender has not broken off.
+		}
+		\addscenario{Alternative Scenario: Phasing Player Fully Breaks Off}{
+			\item If Phasing Player \textit{breaks off} with all remaining units, combat ends.
+		}
+		\additemizedfield{Related Use Cases}{
+			\item Search: Effects of a Search
+		}
+		\end{usecase}
 		
+		\subsection{Use Case - Character Combat II: Phasing vs Non-Player Attackers}
+		\begin{usecase}
+		\addtitle{Character Combat II}{Phasing vs Non-Player Attackers}
+		\addfield{Summary}{Characters have encountered either a Creature or Irate Locals as an action event.}
+		\additemizedfield{Actors}{
+			\item Phasing Player
+		}
+		\additemizedfield{Preconditions}{
+			\item Encountered a Creature or Irate Locals as an action event.
+			}
+		\addscenario{Primary Scenario}{
+				\item Determine whether the character combat will be \textit{hand to hand} or a \textit{firefight}.
+				\begin{enumerate}
+				\item If a Creature is the attacking force, the combat is a \textit{hand to hand}
+				\item If Irate Locals are the attacking force, reference the Irate Locals Chart to determine combat type.
+				\end{enumerate}
+			\item System informs Phase Player that attacker is attempting to kill, as Creatures and Irate Locals always do.
+			\item Phasing Player assigns \textit{active} defenders from those available with at least one character required.
+			\item System determines \textit{combat differential} and informs both Phasing and Non-Phasing players.
+			\item Phasing Player may attempt to \textit{break off} from combat. 
+				\begin{enumerate}
+				\item Phasing Player attempts \textit{break off}
+					\begin{enumerate}
+					\item If \textit{break off} successful for only inactive defenders, those defenders are no longer found or involved in combat.
+					\item If \textit{break off} successful for active AND inactive defenders, both are no longer found and combat ends.
+					\item If \textit{break off} is unsuccessful defenders suffer a right column shift on the Character Combat Results Table for combat.
+					\end{enumerate}
+				\end{enumerate}
+			\item Unless all defending characters have succeeded in breaking off, System determines combat consequences, i.e. number of wounds and captured characters.
+			\item Phasing Player allocates wounds.
+			\item System allocates wounds to Creature or Irate Locals.
+			\item Repeat steps 3-7 indefinitely as long as both sides have live uncaptured characters and defender has not broken off.
+		}
+		\addscenario{Alternative Scenario: Phasing Player Fully Breaks Off}{
+			\item If Phasing Player \textit{breaks off} with all remaining units, combat ends.
+		}
+		\additemizedfield{Related Use Cases}{
+			\item Missions: Mission Phase
+		}
+		\end{usecase}	
 		
 \end{document}
