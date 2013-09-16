@@ -1,0 +1,91 @@
+\documentclass[12pt,letterpaper]{scrreprt}
+
+%----------------------------------------------------------------------
+%				Required Packages
+%----------------------------------------------------------------------
+\usepackage{usecases}
+\usepackage{enumitem}
+%\usepackage{paralist}
+%\usepackage{tabto}
+\usepackage[top=2cm,bottom=3.5cm]{geometry}
+
+%----------------------------------------------------------------------
+%				Title Page
+%----------------------------------------------------------------------
+\title{CS383: Software Engineering}
+\subtitle{HW2: Use Cases\\Fall 2013}
+\author{CS383 Python Team} % Include everyone's name?
+\date{}
+
+%----------------------------------------------------------------------
+%				Additional Settings
+%----------------------------------------------------------------------
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
+
+
+
+
+%----------------------------------------------------------------------
+%				Use Case Document Start
+%----------------------------------------------------------------------
+\begin{document}
+
+% Initializations
+%\NumTabs{2} % This is for creating a two column use case scenario
+\maketitle
+%\tableofcontents % Eventually uncomment this
+
+\chapter{Use Cases}
+        \section{Movement}
+                \subsection{Use Case - Movement Within a Planet)}
+                \begin{usecase}
+                  \addtitle{Movement Within a Planet}
+                  \addfield{Summary}{Player moves Character(s) or military units from Environ to Environ on single planet}
+                  \additemizedfield{Actors}{
+                    \item Phasing Player
+                    \item Non-Phasing Player
+                  }
+                  \additemizedfield{Preconditions}{
+                    \item It is the movement segment of the phasing players turn or it is the reaction segment of the non-phasing player
+                  }
+                  \additemizedfield{Primary Scenario: Units not detectable by PDB}{
+                    \item Player chooses which units are to be moved and where to move them
+                    \item System moves units to new environ
+                  }
+                  \additemizedfield{Alternative Scenario: Units are dectectable by PDB}{
+                    \item System handles PDB Rules
+                  }
+                  \end{usecase}
+                
+                 
+                \subsection{Use Case - Movement Between Planets}
+                \begin{usecase}
+                  \addtitle{Movement between plantes}
+                  \addfield{Summary}{Player moves elegible units between planets}
+                  \additemizedfield{Actors}{
+                        \item Phasing Player
+                        \item Non-Phasing Player
+                  }
+                  \additemizedfield{Preconditions}{
+                       \item Military units must be mobile or stacked with mobile military units. Characters must be on a ship
+                       \item non-phasing player may intercept
+                  }
+                  \additemizedfield{Primary Scenario: Travel occurs in single star system}{
+                            \begin{enumerate}
+                            		\item Player chooses which units are to be moved and where to move them within the star system.
+                                    \item System processes PDB check.
+                                    \item Non Phasing player may react on per orbit basis, intercepting.
+                              \end{enumerate}
+                  }
+                  \additemizedfield{Alternative Scenario: Travel occurs between multiple star systems }{
+                              \begin{enumerate}
+                              		\item Player chooses which units are to be moved inside one star system and the destination inside another star system.
+                                    \item System processes PDB check
+                                    \item Player Hyper Jumps
+                                    \item Non Phasing Player may react on per orbit basis
+                              \end{enumerate}
+                  }
+                \end{usecase}
+		\end{usecase}		
+\end{document}
