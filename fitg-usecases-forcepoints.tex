@@ -1,0 +1,101 @@
+\documentclass[12pt,letterpaper]{scrreprt}
+
+% Includes
+\usepackage{usecases}
+\usepackage{enumitem}
+
+\title{Spend Force Points Use-Cases}
+
+\author{CS383 Python Team---Samuel Foster}
+\date{}
+
+\begin{document}
+		\begin{usecase}
+	\addtitle{Use Case ?}{Force Points (Province Game))}
+	\addfield{Summary}{Player receiving Force Points spends them}
+	\additemizedfield{Precondition}{
+		\item Player just acquired Force Points
+	}
+	\additemizedfield{Actor}{
+		\item Player with Force Points
+	}
+	\addscenario{Success Scenario}{
+		\item Player chooses to spend Force Points
+		\item System offers choice of spending on PDB or Units
+		\item Player chooses Units
+		\item System displays a list of units with costs and offers choice of unit and amount
+		\item Player chooses a unit and amount such that the total cost does not exceed his Force Point total
+		\item Unit(s) added to purchased units
+		\item Player continues spending Force Points
+	}
+	\addscenario{Alternative Scenario: Declines Spending}{
+		\item Player chooses to stop spending Force Points
+		\item Player loses remaining Force Points
+		\item Player places all purchased units on the map
+	}
+	\addscenario{Alternative Scenario: Spend on PDB}{
+		\item Player chooses to spend Force Points on PDB upgrade
+	}
+	\end{usecase}
+
+	\begin{usecase}
+		\addtitle{Use Case ?}{Place Purchased Military Units (Imperial)}
+		\addfield{Summary}{Imperial Player places purchased military units on the map (Capital and Throne planets only)}
+		\additemizedfield{Precondition}{
+			\item Imperial Player has purchased military units using Force Points
+		}
+		\additemizedfield{Actor}{
+			\item Imperial Player
+		}
+		\addscenario{Success Scenario}{
+			\item System displays military unit and its available amount to place
+			\item Imperial Player chooses an amount of the unit to place
+			\item Imperial Player chooses an Environ or the Orbit Box of the Capital planet
+			\item System places the selected amount of the military unit in the selected location
+			\item Imperial Player places remaining units in this fashion
+		}
+		\addscenario{Alternative Scenario: No Capital Planet}{
+			\item The Imperial Player does not possess the Capital Planet
+			\item The Imperial Player cannot place units, and loses all Force Points spent to purchase units
+		}
+	\end{usecase}
+	
+	\begin{usecase}
+		\addtitle{Use Case ?}{Place Purchased Military Units (Rebel)}
+		\addfield{Summary}{Rebel Player places Military Units (Rebelling planet only)}
+		\additemizedfield{Precondition}{
+			\item Rebel Player has purchased military units using Force Points
+		}
+		\additemizedfield{Actor}{
+			\item Rebel Player
+		}
+		\addscenario{Success Scenario}{
+			\item System displays military unit and its available amount to place
+			\item Rebel Player chooses an amount of the unit to place
+			\item Rebel Player chooses an appropriate Environ on the Rebelling planet
+			\item System places the selected amount of the military unit in the selected environ
+			\item Rebel Player places remaining units in this fashion
+			\item Rebel Player may declare an immediate Military Attack on Imperial military units in Environs where units were placed
+		}
+		\addscenario{Alternative Scenario: No Capital Planet}{
+			\item The Imperial Player does not possess the Capital Planet
+			\item The Imperial Player cannot place units, and loses all Force Points spent to purchase units
+		}
+	\end{usecase}
+	
+	\begin{usecase}
+		\addtitle{Use Case ?}{PDB Upgrade}
+		\addfield{Summary}{Player increases the level of a PDB they control, or places a down PDB Up}
+		\additemizedfield{Precondition}{
+			\item Player has spent Force Points to upgrade a PDB
+		}
+		\additemizedfield{Actor}{
+			\item Player who purchased PDB upgrade
+		}
+		\addscenario{Success Scenario}{
+			\item Player chooses a PDB to upgrade
+			\item System either flips the PDB from down to Up or increases its level
+			\item Player continues spending Force Points
+		}
+	\end{usecase}
+\end{document}
