@@ -1,0 +1,499 @@
+\documentclass[12pt,letterpaper]{scrreprt}
+
+%% Authored by Robert Meine, Tao Zhang, ChiHsiang Wang, Jordan Leithart
+% Includes
+\usepackage{usecases}
+\usepackage{enumitem}
+
+\title{Use Cases Template}
+
+\author{CS383 Python Team}
+\date{}
+
+\begin{document}
+\maketitle
+\chapter{Galactic Game Use Cases}
+
+%% I
+\section{Galactic Event Cards}
+\begin{usecase}
+\addtitle{Galactic Event Case I}{Drawing Galactic Event Card}
+\addfield{Precondition}{Currently in Galactic Event Phase}
+\addfield{Actor}{Both players}
+\addscenario{Success Scenario}{
+	\item Random card is drawn
+	\item Actor(s) carry out instructions
+}
+\addscenario{Alternate Scenario 1}{
+	\item[2.a] The event affects a later game turn
+		\begin{enumerate}[label=\arabic*.]
+		\item Card is prominently displayed until game turn
+		\item Carry out instructions when specified turn occurs
+		\end{enumerate}
+}
+\end{usecase}
+
+%% II
+\section{Imperial Taxation}
+\begin{usecase}
+\addtitle{Imperial Resource Case I}{Imperial player collects taxes}
+\addfield{Precondition}{Currently in Resource Phase}
+\addfield{Actor}{Imperial Player}
+\addscenario{Success Scenario}{
+	\item Actor determines which planets are eligible to tax
+	\item Actor chooses which eligible planets will be taxed (with repercussions)
+	
+	\item Actor chooses tax level (full or half of resource value)
+	\item Actor collects taxes from province(s)
+	
+	\item Actor adjusts Loyalty marker
+	\item Actor adjusts Resource Tract
+	
+	\item Actor collects taxation Force Points from Slave World, Industry World, or Gem World if applicable.
+}
+\end{usecase}
+
+%% III
+\section{Rebel Base Use Cases}
+\begin{usecase}
+\addtitle{Rebel Base Case I}{Rebel base chosen}
+\addfield{Precondition}{Start of game}
+\addfield{Actor}{Rebel player}
+\addscenario{Success Scenario}{
+	\item Rebel player chooses planet to place secret base
+}
+\end{usecase}
+
+%% IV
+\begin{usecase}
+\addtitle{Rebel Base Case II}{Rebel base revealed by Rebel player actively}
+\addfield{Related Case}{Rebel base revealed by Rebel player passively}
+\addfield{Precondition}{Rebel player wants to place units}
+\addfield{Actor}{Rebel player}
+\addscenario{Success Scenario}{
+	\item Actor desires to place units bought with Force points.
+	\item Actor places units on the planet
+	
+	\item Actor reveals Rebel secret base
+}
+\end{usecase}
+
+%% V
+\begin{usecase}
+\addtitle{Rebel Base Case III}{Rebel based revealed by Rebel player passively}
+\addfield{Related Case}{Rebel base revealed by Rebel player actively}
+\addfield{Precondition}{Imperial player succeeds at Gather Information mission}
+\addfield{Actor}{Rebel player}
+\addscenario{Success Scenario}{
+	\item Actor reveals two planets that the rebel base is NOT on (16 total planets)
+}
+\addscenario{Alternate Scenario 1}{
+	\item[1.a] No more planets to reveal
+		\begin{enumerate}[label=\arabic*.]
+		\item Actor reveals secret Rebel base
+		\end{enumerate}
+}
+\end{usecase}
+
+
+%% VI
+
+\section{Maintenance and Resources}
+\begin{usecase}
+\addtitle{Maintenance Use Case I}{Maintenance}
+\addfield{Precondition}{During Resource Phase}
+\addfield{Actor}{Imperial player}
+\addscenario{Success Scenario}{
+	\item Actor adds up number of units and PDB
+	\item This amount is subtracted from available Force Points
+}
+\end{usecase}
+
+
+%% VII
+\begin{usecase}
+\addtitle{Spending Resources Case II}{Spend Force points}
+\addfield{Precondition}{Currently in Resource Phase}
+\addfield{Actor}{Either player}
+\addscenario{Success Scenario}{
+	\item Computer calculates Force Points based on Resource Tract
+	\item Actor chooses to use Force Points to purchase units or PDB upgrades
+	\item Actor places units purchased on the game map
+}
+\end{usecase}
+
+%% IX
+\section{Game Turn counter}
+\begin{usecase}
+\addtitle{Game Turn Counter Case I}{Increment Game Turn counter}
+\addfield{Precondition}{Before Galactic Event Phase or Operations Phase begins}
+\addfield{Actor}{Computer}
+\addscenario{Success Scenario}{
+	\item Actor increments game-turn counter
+	\item Actor displays game-turn counter
+}
+\end{usecase}
+
+%% X
+\section{Secret Planet Use Cases}
+\begin{usecase}
+\addtitle{Secret Planet Case I}{Assign Secret Planets}
+\addfield{Precondition}{Start of game}
+\addfield{Actor}{Computer}
+\addscenario{Success Scenario}{
+	\item Actor randomly assigns secret planets.
+}
+\end{usecase}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% not sure how to assign user tasks to secret planets. Need to discuss with team
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% XII
+\begin{usecase}
+\addtitle{Secret Planet Case II}{Deploying Secret Planet Counters}
+\addfield{Precondition}{Start of play}
+\addfield{Actor}{Imperial Player}
+\addscenario{Success Scenario}{
+	\item Gather all 16 counters
+	\item Randomly draws 1 counter at a time
+	\item Places counter on Orbit Box of a listed planet without a counter
+	\item Repeat Steps 2-3 until all 16 counters are placed
+
+}
+\end{usecase}
+
+
+
+%% XI.1
+\begin{usecase}
+\addtitle{Secret Planet Case III}{Imperial player reveals secret planet}
+\addfield{Precondition}{None}
+\addfield{Actor}{Imperial player}
+\addscenario{Success Scenario}{
+	\item Imperial may reveal any Planet Secret to rebel player
+}
+\end{usecase}
+
+
+%% XII
+\begin{usecase}
+\addtitle{Secret Planet Case IV}{Rebel player discovers secret planet}
+\addfield{Precondition}{If Mareg or the Advisor Android is in the Orbit Box of a secret planet}
+\addfield{Actor}{Rebel player}
+\addscenario{Success Scenario}{
+	\item Planet secret is revealed
+}
+\end{usecase}
+
+\begin{usecase}
+\addtitle{Secret Planet Case V}{Rebel player discovers 2 secret planets}
+\addfield{Precondition}{If the Rebel player completes a Gather Information mission}
+\addfield{Actor}{Rebel player}
+\addscenario{Success Scenario}{
+	\item 2 planet secrets are revealed. Imperial Player chooses
+}
+\end{usecase}
+
+\begin{usecase}
+\addtitle{Secret Planet Case VI}{Rebel player discovers all secret planets}
+\addfield{Precondition}{If the Rebel Player completes a Gather Information mission on the Imperial Acrhives planet}
+\addfield{Actor}{Rebel Player}
+\addscenario{Success Scenario}{
+	\item All planet secrets are revealed
+}
+\end{usecase}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% End secret planets use cases
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% XIII
+\section{Strategic Assignment}
+\begin{usecase}
+\addtitle{SA Case I}{Ordering Strategic Assignment Deck}
+\addfield{Precondition}{Start of game}
+\addfield{Actor}{Imperial Player}
+\addscenario{Success Scenario}{
+	\item Actor orders Strategic Assignment deck before the game begins (order cannot be changed)
+	\item Actor may inspect the deck at any time to refresh memory
+}
+\end{usecase}
+
+\begin{usecase}
+\addtitle{SA Card Case II}{Draw Strategic Assignment Card}
+\addfield{Precondition}{Currently in Imperial Strategic Assignment Phase}
+\addfield{Actor}{Imperial Player}
+\addscenario{Success Scenario}{
+	\item Actor draws Strategic Assignment Card from top of deck
+	\item Actor limits unit movement based on card
+}
+\end{usecase}
+
+%% XIV
+\section{Interplanetary Movement}
+\begin{usecase}
+\addtitle{Movement Case I}{Interplanetary Movement}
+\addfield{Precondition}{Province(s) on a Strategic Assignment card are referred to}
+\addfield{Actor}{Imperial Player}
+\addscenario{Success Scenario}{
+	\item Units on one named Province may be moved to any planet in the second named Province and visa versa.
+	\item Units not on the province named may only move to a Capital planet, a planet for a star-faring race or the Throne planet.
+	\item Units may move between Environs and Orbits on the same planet freely.
+}
+\addscenario{Alternate Scenario 1}{
+	\item[1.a] Planet is in rebellion or Rebel-Controlled
+		\begin{enumerate}[label=\arabic*.]
+		\item Imperial player may move units to the planet in rebellion from any capital planet
+		\item Imperial player may not move units away from planet in rebellion
+		\end{enumerate}
+	\item[1.b] Rebel base is revealed
+		\begin{enumerate}[label=\arabic*.]
+		\item Imperial player follows restrictions until the end of his turn.
+		\item Next turn, Imperial Player has no restrictions on unit movement
+		\end{enumerate}
+}
+\end{usecase}
+
+%%%%
+%% Atrocities
+%%%%
+
+%% XV
+\section{Atrocities}
+\begin{usecase}
+\addtitle{Atrocities Case I}{Buying an Atrocity Unit}
+\addfield{Preconditions}{ 1) 1 per game turn; 2) Imperial Player has enough Force points; 3) Only if there is an available unit in the ``counter box''
+}
+\addfield{Actor}{Imperial Player}
+\addscenario{Success Scenario}{
+	\item Actor purchases Atrocity Unit
+	\item Atrocity places unit in the Orbit box of the first Province Capital (Diomas) or the Throne Planet (Orlog).
+}
+\end{usecase}
+
+%% XVI
+\begin{usecase}
+\addtitle{Atrocities Case II}{Moving an Atrocity Unit}
+\addfield{Preconditions}{1) Must have an Atrocity Unit; 2) Follows Strategic Assignment restrictions on movement
+}
+\addfield{Actor}{Imperial Player}
+\addscenario{Success Scenario}{
+	\item Actor may move Atrocity Unit into Orbit box but not Environ box.
+}
+\end{usecase}
+
+%% XVII
+\begin{usecase}
+\addtitle{Atrocities Case III}{Committing Atrocities}
+\addfield{Preconditions}{1) Either player draws Action Event, ``Imperial Player may commit Atrocity''; 2) Imperial player owns a Level 2 PDB or Elite unit; 3) Rebel base revealed and Imperial player has a unit that can commit an Atrocity; 4) Galactic Event ``Emperor in a Rare Mood'' allows Imperial player to commit an Atrocity on any planet; 5) Can only commit one Atrocity for each event;
+}
+\addfield{Related Cases}{1) Sneak Attack Atrocity; 2) Strafe Attack Atrocity; 3) Chemical Attack Atrocity; 4) Planet Stabilizer Attack Atrocity
+}
+\addfield{Actor}{Imperial Player}
+\addscenario{Success Scenario}{
+	\item Imperial player chooses Atrocity
+	\item Game board changes depending on Atrocity chosen
+}
+\end{usecase}
+
+%% XVIII
+\begin{usecase}
+\addtitle{Atrocities Case IV}{Sneak Attack Atrocity}
+\addfield{Precondition}{Imperial Elite unit in selected Environ}
+\addfield{Actor}{Imperial Player}
+\addscenario{Success Scenario}{
+	\item Imperial Player declares immediate determined assault on Rebel Military Units
+	\item Combat occurs
+	\item Rebel wounds doubled
+	\item Loyalty marker shifts one space in Rebel player's favor.
+}
+\end{usecase}
+
+%% XIX
+\begin{usecase}
+\addtitle{Atrocities Case V}{Strafe Attack Atrocity}
+\addfield{Precondition}{Level 2 PDB on chosen planet}
+\addfield{Actor}{Imperial Player}
+\addscenario{Success Scenario}{
+	\item Imperial Player declares strafe attack on planet
+	\item Both player's military units are destroyed
+	\item Characters receive one wound each
+	\item PDB is reduced to level 1
+	\item Loyalty marker shifts 2 spaces in Rebel's favor
+}
+\addscenario{Alternate Scenario 1}{
+	\item[5.a] Planet is at unrest
+		\begin{enumerate}[label=\arabic*.]
+		\item Planet is immediately placed into Rebellion
+		\item The Domino Effect can be initiated
+		\end{enumerate}
+}
+\end{usecase}
+
+%% XX
+\begin{usecase}
+\addtitle{Atrocities Case VI}{Chemical Attack Atrocity}
+\addfield{Precondition}{Resolution or Peacemaker in Planet's Orbit box}
+\addfield{Actor}{Imperial Player}
+\addscenario{Success Scenario}{
+	\item All Rebel military units from special Environs are destroyed
+	\item All non-Rhone characters receive two wounds each.
+	\item Loyalty marker shifts two spaces in Rebel player's favor.
+}
+\addscenario{Alternate Scenario 1}{
+	\item[] Mass hypnotic chemicals
+		\begin{enumerate}[label=\arabic*.]
+		\item Character's unaffected (unsure if this means by wounding chemicals or by hypnosis)
+		\item Loyalty can't change until atrocity is lifted (by Imperial Choice, Spaceship Quest mission, Military Combat).
+		\item The ship used to commit the atrocity stays in the orbit box until it is moved or defeated in combat.
+		\item Once lifted, the loyalty is immediately shifted two spaces in Rebel's favor.
+		\end{enumerate}
+}
+\end{usecase}
+
+%% XXI
+\begin{usecase}
+\addtitle{Atrocities Case VII}{Planet Stabilizer Attack Atrocity}
+\addfield{Precondition}{Planet Stabilizers in chosen Planet's orbit box}
+\addfield{Actor}{Imperial Player}
+\addscenario{Success Scenario}{
+	\item Imperial player can choose to either halt the planet's rotation, or commit a Chemical Attack Atrocity
+	\item Everything on the planet (including Orbit box) is destroyed. This includes the Planet Stabilizer
+	\item Planet is destroyed.
+	\item Domino Effect is immediately initiated
+}
+\end{usecase}
+
+%% XXII
+\section{Galactic Game Missions}
+\begin{usecase}
+\addtitle{Missions Case I}{Question Prisoner Mission}
+\addfield{Precondition}{1) Enemy character must be captured; 2) Must have character in the same squad as captured player
+}
+\addfield{Actor}{Either Player}
+\addscenario{Success Scenario}{
+	\item Only bonus draws are received to resolve this mission
+	\item If Phasing player is Rebel he may choose to reveal: 1) All imperial units on a specific province. They are flipped back when he is done inspecting them. 2) Two planets to reveal their planet secret 3) The next strategic assignment card.
+	\item If Imperial, the Rebel player must reveal two more planets that don't have the Rebel secret base
+}
+\addscenario{Alternate Scenario 1}{
+	\item[] Imperial Player chooses to torture 
+		\begin{enumerate}[label=\arabic*.]
+		\item Imperial player receives the extra bonus draw stated on the card.
+		\item Tortured character receives wounds equal to double a die roll minus the character's current endurance rating.
+		\item If the above kills the prisoner, no information is received
+		\end{enumerate}
+}
+\end{usecase}
+
+%% addendum to the gather info missions; in the galactic game players don't earn victory points from them
+
+%% XXIII
+\begin{usecase}
+\addtitle{Missions Case II}{Spaceship Quest mission}
+\addfield{Preconditions}{1) Characters to perform this mission must have a spaceship and must be in the orbit box; 2) There must be an Imperial Atrocity Unit in orbit.
+}
+\addfield{Actor}{Rebel Player}
+\addscenario{Success Scenario}{
+	\item Must draw the letter twice in order to succeed in destroying a single Atrocity unit
+	\item If letter is drawn once, Rebel player does not roll die to see how his character prevailed. But the Imperial unit is unscathed as well
+	\item If no letters are drawn, the die roll is performed.
+}
+\addscenario{Alternate Scenario 1}{
+	\item[] Imperial Player chooses to torture 
+		\begin{enumerate}[label=\arabic*.]
+		\item Imperial player receives the extra bonus draw stated on the card.
+		\item Tortured character receives wounds equal to double a die roll minus the character's current endurance rating.
+		\item If the above kills the prisoner, no information is received
+		\end{enumerate}
+}
+\end{usecase}
+
+%% XXIV
+\section{Setting Up the Galactic Game}
+\begin{usecase}
+\addtitle{Setup Case I}{Computer sets preliminary information}
+\addfield{Precondition}{Start of the Game}
+\addfield{Actor}{Computer}
+\addscenario{Success Scenario}{
+	\item All Loyalty markers are placed in the proper spots for each planet.
+	\item All PDBs start as level 0 and Down. PDBs are placed on every planet
+	\item Game turn counter starts at 1
+	\item Place credit markers for the respective players (Rebel and Imperial)
+	\item Galactic Event deck and Action deck are randomized
+}
+\end{usecase}
+
+%% XXV
+\begin{usecase}
+\addtitle{Setup Case II}{Imperial player sets up for the Galactic Game}
+\addfield{Precondition}{Start of the Game}
+\addfield{Actor}{Imperial Player}
+\addscenario{List of tasks}{
+	\item Actor places all 16 planet secret markers on the game map with restrictions
+	\item Actor arranges the Strategic Assignment Deck
+}
+\end{usecase}
+
+%% XXVI
+\begin{usecase}
+\addtitle{Setup Case III}{Rebel player sets up for the Galactic Game}
+\addfield{Precondition}{Start of the Game}
+\addfield{Actor}{Rebel Player}
+\addscenario{Success Scenario}{
+	\item Actor secretly chooses the Rebel Secret Base planet.
+}
+\end{usecase}
+
+%% XXVI
+\begin{usecase}
+\addtitle{Setup Case IV}{Imperial Player deploys military}
+\addfield{Precondition}{Start of the Game}
+\addfield{Actor}{Imperial Player}
+\addscenario{List of tasks}{
+	\item Actor spends force points to upgrade PDBs and buy units
+	\item Actor may spend 70 Force points in First Province and 35 in each after.
+	\item Units bought with force points from provinces must be placed in that province.
+	\item A maximum of half the force points can be spent on PDBs (rounded down).
+	\item A maximum of 2 elite units may be purchased in the First Province. A maximum of 1 in all other provinces
+	\item Actor may not purchase Suicide Squad or Atrocity Units
+	\item At least one military unit must be on each planet. No other restrictions apply
+	\item Actor must spend 1 force point to switch the PDB to up before upgrading.
+}
+\end{usecase}
+
+%% XXVII
+\begin{usecase}
+\addtitle{Setup Case V}{Imperial player Character Deployment}
+\addfield{Precondition}{Start of the Game}
+\addfield{Actor}{Imperial Player}
+\addscenario{List of tasks}{
+	\item Actor may choose where Redjac, Jin Voles, Vans Ka-tie-a and Els Taroff are placed. Restrictions apply
+}
+\end{usecase}
+
+%% XXVIII
+\begin{usecase}
+\addtitle{Setup Case VI}{Rebel player Character Deployment}
+\addfield{Precondition}{Start of the Game}
+\addfield{Actor}{Rebel Player}
+\addscenario{List of tasks}{
+	\item Actor draws random possession cards but must choose the pre-made group before he sees the card.
+	\item Actor must place his character groups in each province (except the First Province). Actor may place on any planet except a Capital planet, home planet of a star-faring race, or a planet with a Planet Secret
+}
+\end{usecase}
+
+%% XXIX
+\section{Victory Conditions}
+\begin{usecase}
+\addtitle{Victory Condition Case I}{Victory Conditions}
+\addfield{Precondition}{None}
+\addfield{Actor}{Computer}
+\addscenario{List of tasks}{
+	\item If the Rebel player's victory points total is greater than or equal to 26 at the end of the Imperial Player's turn, he wins.
+	\item If all 20 Rebel characters are killed and/or captured. OR If after the Rebel Secret base is revealed, if there are no Rebel controlled planets the Imperial player wins.
+	\item If at end of Game-Turn 20 the Rebel player's victory points are less than 26, Imperial player wins.
+}
+\end{usecase}
+
+\end{document}
