@@ -1,0 +1,38 @@
+\documentclass[12pt,letterpaper]{scrreprt}
+
+% Includes
+\usepackage{usecases}
+\usepackage{enumitem}
+
+\title{Use Cases Template}
+
+\author{CS383 Python Team---Samuel Foster}
+\date{}
+
+\begin{document}
+		\begin{usecase}
+	\addtitle{Use Case I}{Interception}
+	\addfield{Summary}{The non-Phasing Player responds to Phasing Player Interplanetary Military Movement}
+	\additemizedfield{Precondition}{
+		\item Phasing Player moves military unit in/out of Orbit Box containing non-Phasing Player military units
+		\item OR Phasing Player military unit begins Interplanetary Military Movement Segment inside Orbit Box containing non-Phasing Player military units
+	}
+	\additemizedfield{Precondition}{
+		\item non-Phasing Player must have at least one (non-Atrocity, non-Suicide Squad) military unit available to intercept (not on interception stack)
+	}
+	\additemizedfield{Actor}{
+		\item Non-Phasing Player
+	}
+	\addscenario{Success Scenario}{
+		\item Non-Phasing Player chooses to intercept Phasing Player's unit
+		\item Non-Phasing Player chooses one or more (non-Atrocity, non-Suicide Squad) military units to intercept with
+		\item System places intercepted and intercepting units on Orbit Box's interception stack
+		\item Phasing Player's Interplanetary Military Movement Segment continues
+	}
+	\addscenario{Alternative Scenario: Declines Intercept}{
+		\item Non-Phasing Player chooses not to intercept
+		\item Phasing Player's Interplanetary Military Movement Segment continues
+	}
+	\end{usecase}
+
+\end{document}
