@@ -1,0 +1,33 @@
+\contentsline {chapter}{\numberline {1}Use cases}{3}
+\contentsline {section}{\numberline {1.1}Pre-Game}{3}
+\contentsline {subsection}{\numberline {1.1.1}Use Case - Pre-game I: Setting up the Player(s)}{3}
+\contentsline {subsection}{\numberline {1.1.2}Use Case - Pre-game II: Choosing the Game}{4}
+\contentsline {subsection}{\numberline {1.1.3}Use Case - Pre-game III: Choosing the Scenario}{5}
+\contentsline {section}{\numberline {1.2}Game opening}{5}
+\contentsline {subsection}{\numberline {1.2.1}Use Case - Game Setup I: Game Setup}{5}
+\contentsline {section}{\numberline {1.3}Movement}{6}
+\contentsline {subsection}{\numberline {1.3.1}Use Case - Movement I: Within a Planet)}{6}
+\contentsline {subsection}{\numberline {1.3.2}Use Case - Movement II: Movement between Planets}{7}
+\contentsline {subsection}{\numberline {1.3.3}Use Case - Movement III: Interception}{8}
+\contentsline {section}{\numberline {1.4}Military Combat}{9}
+\contentsline {subsection}{\numberline {1.4.1}Use Case - Military Combat I: Environ Military Combat}{9}
+\contentsline {subsection}{\numberline {1.4.2}Use Case - Military Combat II: Combat after a Rebellion}{10}
+\contentsline {subsection}{\numberline {1.4.3}Use Case - Military Combat III: Space Military Combat}{11}
+\contentsline {section}{\numberline {1.5}Character Combat}{12}
+\contentsline {subsection}{\numberline {1.5.1}Use Case - Character Combat I: Combat against Enemy}{12}
+\contentsline {subsection}{\numberline {1.5.2}Use Case - Character Combat II: Combat against System}{14}
+\contentsline {section}{\numberline {1.6}Search}{16}
+\contentsline {subsection}{\numberline {1.6.1}Use Case - Search I: Search Phase}{16}
+\contentsline {section}{\numberline {1.7}Possessions}{17}
+\contentsline {subsection}{\numberline {1.7.1}Use Case - Possessions I: Using Possessions}{17}
+\contentsline {subsection}{\numberline {1.7.2}Use Case - Possessions II: Transferring Possessions}{18}
+\contentsline {section}{\numberline {1.8}Missions}{19}
+\contentsline {subsection}{\numberline {1.8.1}Use Case - Missions I: Mission Phase}{19}
+\contentsline {subsection}{\numberline {1.8.2}Use Case - Missions II: Completing Missions in One Environ}{20}
+\contentsline {section}{\numberline {1.9}Galactic Use Cases}{21}
+\contentsline {subsection}{\numberline {1.9.1}Galactic Event Cards}{21}
+\contentsline {subsection}{\numberline {1.9.2}Imperial Taxation}{22}
+\contentsline {subsection}{\numberline {1.9.3}Rebel Base Use Cases}{22}
+\contentsline {subsection}{\numberline {1.9.4}Maintenance and Resources}{23}
+\contentsline {subsection}{\numberline {1.9.5}Secret Planet Use Cases}{24}
+\contentsline {subsection}{\numberline {1.9.6}Atrocities}{26}
